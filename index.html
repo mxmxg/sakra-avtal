@@ -51,20 +51,29 @@
   .assure .ck{color:#7FC9A3;font-weight:600}
 
   /* ---- header ---- */
-  header{border-bottom:1px solid var(--line);background:var(--paper)}
-  .nav{display:flex;align-items:center;justify-content:space-between;padding:20px 24px;max-width:1080px;margin:0 auto}
-  .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:1.28rem;font-weight:600;color:var(--navy)}
+  header{border-bottom:1px solid var(--line);background:rgba(245,242,236,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:50}
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1080px;margin:0 auto;gap:24px}
+  .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:1.28rem;font-weight:600;color:var(--navy);flex-shrink:0}
   .brand .seal{
     width:34px;height:34px;border:1.5px solid var(--stamp);border-radius:50%;
     display:grid;place-items:center;color:var(--stamp);font-family:'IBM Plex Mono',monospace;
     font-size:.62rem;font-weight:600;transform:rotate(-8deg);flex-shrink:0;
   }
+  .nav-links{display:flex;gap:28px;margin-left:auto;margin-right:8px}
+  .nav-links a{
+    font-family:'Inter',sans-serif;font-size:.92rem;color:var(--ink);text-decoration:none;
+    padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;white-space:nowrap;
+  }
+  .nav-links a:hover{color:var(--navy);border-bottom-color:var(--stamp)}
   .nav-cta{
     font-family:'IBM Plex Mono',monospace;font-size:.82rem;letter-spacing:.04em;
     background:var(--navy);color:var(--white);padding:11px 20px;border-radius:var(--radius);
-    text-decoration:none;transition:background .2s;
+    text-decoration:none;transition:background .2s;flex-shrink:0;
   }
   .nav-cta:hover{background:var(--navy-800)}
+  @media(max-width:820px){.nav-links{display:none}}
+  /* så sticky-menyn inte döljer rubriken man hoppar till */
+  section[id],div[id]{scroll-margin-top:80px}
 
   /* ---- hero ---- */
   .hero{position:relative;overflow:hidden;background:var(--paper)}
@@ -298,7 +307,7 @@
 
 <div class="assure">
   <div class="wrap">
-    <span><span class="ck">✓</span> Granskas av erfarna experter — inte av en robot</span>
+    <span><span class="ck">✓</span> Granskas av erfarna rådgivare, inte av en robot</span>
     <span><span class="ck">✓</span> 20+ års erfarenhet inom telekom &amp; avtal</span>
     <span><span class="ck">✓</span> Bollplank &amp; rådgivning när du behöver det</span>
   </div>
@@ -307,6 +316,11 @@
 <header>
   <div class="nav">
     <div class="brand"><span class="seal">SÄK</span> Säkra Avtal</div>
+    <nav class="nav-links">
+      <a href="#sa-funkar">Så funkar det</a>
+      <a href="#pris">Pris</a>
+      <a href="#faq">Vanliga frågor</a>
+    </nav>
     <a href="#kontakt" class="nav-cta">Få hjälp idag</a>
   </div>
 </header>
@@ -337,15 +351,15 @@
   <div class="wrap">
     <div class="stat">
       <div class="fig">98%</div>
-      <div class="lbl">av svenskarna är negativa till telefonförsäljning — ändå ringer de vidare.</div>
+      <div class="lbl">av svenskarna är negativa till telefonförsäljning. Ändå ringer de vidare.</div>
     </div>
     <div class="stat">
       <div class="fig">1000-tals</div>
-      <div class="lbl">anmälningar mot telekombolag för vilseledande pris och bindningstid — varje år.</div>
+      <div class="lbl">mot telekombolag varje år för vilseledande pris och bindningstid.</div>
     </div>
     <div class="stat">
       <div class="fig">24 mån</div>
-      <div class="lbl">bindningstid är vanligt — ett enda felaktigt ja kan kosta dig i åratal.</div>
+      <div class="lbl">bindningstid är vanligt. Ett enda felaktigt ja kan kosta dig i åratal.</div>
     </div>
   </div>
   <p class="stats-source">Källa: Konsumentverkets rapporter om telefonförsäljning samt Råd &amp; Röns Skamlistan 2025.</p>
@@ -366,7 +380,7 @@
       </div>
       <div class="cell">
         <div class="num">MAGKÄNSLAN</div>
-        <p>Du inser att du blivit lurad. Timmarna går åt till mejl, samtal och ånger — tid du skulle lagt på ditt företag. Ingen ska behöva känna så.</p>
+        <p>Du inser att du blivit lurad. Timmarna går åt till mejl, samtal och ånger, tid du skulle lagt på ditt företag. Ingen ska behöva känna så.</p>
       </div>
     </div>
     <p class="kicker">Tänk om någon bara hade läst avtalet åt dig först.</p>
@@ -387,16 +401,16 @@
     <div class="sec-head">
       <span class="eyebrow">Så fungerar det</span>
       <h2>Ett granskat avtal, innan du binder dig</h2>
-      <p>När en säljare kontaktar dig och ett beställningsunderlag tas fram skickar du det till oss. Erfarna experter granskar avtalet — innan du tackar ja eller signerar.</p>
+      <p>När en säljare kontaktar dig och ett beställningsunderlag tas fram skickar du det till oss. Erfarna rådgivare granskar avtalet innan du tackar ja eller signerar.</p>
     </div>
     <div class="steps">
       <div class="step">
         <h3>Du skickar in avtalet</h3>
-        <p>Skicka underlaget från säljaren till oss så snart det tas fram — innan du signerar något.</p>
+        <p>Skicka underlaget från säljaren till oss så snart det tas fram, innan du signerar något.</p>
       </div>
       <div class="step">
-        <h3>En expert granskar det</h3>
-        <p>En av våra rådgivare går igenom varje villkor för hand och jämför med det som faktiskt sades under säljsamtalet.</p>
+        <h3>En rådgivare granskar det</h3>
+        <p>Våra rådgivare går igenom varje villkor för hand. Vi kollar att du inte fastnar med abonnemang du inte behöver, blir flyttad till en annan operatör i smyg eller riskerar dubbla månadskostnader.</p>
       </div>
       <div class="step">
         <h3>Du får rekommendation &amp; bollplank</h3>
@@ -407,12 +421,12 @@
     <div class="check-wrap">
       <h3>Vi säkerställer att:</h3>
       <ul class="checklist">
-        <li>Erbjudandet stämmer med det som sagts under säljsamtalet</li>
+        <li>Du inte binder upp dig på abonnemang du inte behöver</li>
         <li>Pris och månadskostnad är korrekta</li>
         <li>Bindningstid och uppsägningsvillkor är tydliga</li>
-        <li>Alla produkter och tjänster är sådant du faktiskt vill köpa</li>
+        <li>Du inte flyttas till en ny operatör utan att förstå det</li>
+        <li>Du inte riskerar dubbla månadskostnader</li>
         <li>Det inte finns oväntade avgifter eller villkor</li>
-        <li>Du får ett tydligt underlag innan du bestämmer dig</li>
       </ul>
     </div>
   </div>
@@ -446,7 +460,7 @@
     </div>
     <div class="why">
       <div class="item"><h3><span class="n">01</span> 20+ års erfarenhet</h3><p>Samlad kunskap inom telekom och avtalsrådgivning.</p></div>
-      <div class="item"><h3><span class="n">02</span> Riktiga experter, inte en robot</h3><p>Varje avtal granskas för hand av en erfaren rådgivare — innan du signerar.</p></div>
+      <div class="item"><h3><span class="n">02</span> Riktiga experter, inte en robot</h3><p>Varje avtal granskas för hand av en erfaren rådgivare innan du signerar.</p></div>
       <div class="item"><h3><span class="n">03</span> Bollplank året runt</h3><p>Har du en avtalsfråga? Hör av dig. Vi finns som rådgivare löpande, inte bara vid granskning.</p></div>
       <div class="item"><h3><span class="n">04</span> Alltid oberoende</h3><p>Vi säljer inga avtal. Vi står bara på din sida.</p></div>
       <div class="item"><h3><span class="n">05</span> Undvik onödiga kostnader</h3><p>Ett enda granskat avtal kan spara tusentals kronor.</p></div>
@@ -468,7 +482,7 @@
       <div class="unit">/år ex moms</div>
       <ul>
         <li>Obegränsat antal avtalsgranskningar</li>
-        <li>Granskning av erfaren expert — inte automatik</li>
+        <li>Granskning av erfaren rådgivare, inte automatik</li>
         <li>Bollplank &amp; rådgivning löpande under året</li>
         <li>Tydlig rekommendation innan du signerar</li>
       </ul>
@@ -490,7 +504,7 @@
       </details>
       <details class="faq-item">
         <summary>Hur snabbt får jag svar?</summary>
-        <p>Du får vår bedömning inom 24 timmar efter att du skickat in avtalet. Har du bråttom med ett säljsamtal kan du be säljaren skicka underlaget och återkomma — du behöver aldrig säga ja på plats.</p>
+        <p>Du får vår bedömning inom 24 timmar efter att du skickat in avtalet. Har du bråttom med ett säljsamtal kan du be säljaren skicka underlaget och återkomma. Du behöver aldrig säga ja på plats.</p>
       </details>
       <details class="faq-item">
         <summary>Vilka typer av avtal granskar ni?</summary>
@@ -512,7 +526,7 @@
   <div class="wrap">
     <span class="eyebrow">Vårt löfte</span>
     <h2>Sluta oroa dig för nästa säljsamtal</h2>
-    <p>Du ska aldrig behöva fundera över om du missat viktiga villkor eller bundit upp dig till något du inte avsåg att köpa. Vi ser till att du vet exakt vad du tackar ja till — innan avtalet blir bindande.</p>
+    <p>Du ska aldrig behöva fundera över om du missat viktiga villkor eller bundit upp dig till något du inte avsåg att köpa. Vi ser till att du vet exakt vad du tackar ja till, innan avtalet blir bindande.</p>
 
     <div class="form-card">
       <form id="kontaktForm" action="https://formspree.io/f/xwvgkbza" method="POST">
@@ -643,7 +657,7 @@
     <div class="cols">
       <div class="col">
         <div class="brand"><span class="seal">SÄK</span> Säkra Avtal</div>
-        <p>Oberoende avtalsrådgivning för enskilda firmor och småföretag. Vi står på din sida — innan du signerar.</p>
+        <p>Oberoende avtalsrådgivning för enskilda firmor och småföretag. Vi står på din sida, innan du signerar.</p>
       </div>
       <div class="col">
         <h4>Kontakt</h4>
