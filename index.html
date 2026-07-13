@@ -136,6 +136,11 @@
   .stat .lbl{color:var(--muted);font-size:.94rem;margin-top:8px;max-width:26ch;margin-left:auto;margin-right:auto}
   @media(max-width:700px){.stats .wrap{grid-template-columns:1fr}.stat:not(:last-child)::after{display:none}.stat:not(:last-child){border-bottom:1px solid var(--line)}}
   .stats-source{text-align:center;font-size:.76rem;color:#9aa6b0;padding:14px 24px 0;font-family:'IBM Plex Mono',monospace}
+  /* ---- kontext-avsnitt efter statistik ---- */
+  .context{background:var(--paper)}
+  .context .wrap{padding:64px 24px 20px;max-width:760px;text-align:center}
+  .context p{font-size:1.18rem;line-height:1.6;color:var(--ink)}
+  .context p strong{color:var(--navy);font-weight:600}
 
   /* ---- lättnad / vändning ---- */
   .relief{background:var(--white)}
@@ -425,15 +430,21 @@
       <div class="lbl">av svenskarna är negativa till telefonförsäljning. Ändå ringer de vidare.</div>
     </div>
     <div class="stat">
-      <div class="fig">1000-tals</div>
-      <div class="lbl">anmälningar mot telekombolagen varje år, ofta om vilseledande pris och bindningstid.</div>
+      <div class="fig">61%</div>
+      <div class="lbl">av svenska företagare har utsatts för bedrägeri det senaste året. En kraftig ökning från 41% 2023.</div>
     </div>
     <div class="stat">
       <div class="fig">24–36 mån</div>
       <div class="lbl">bindningstid är vanligt. Ett enda felaktigt ja kan kosta dig i åratal.</div>
     </div>
   </div>
-  <p class="stats-source">Källa: Konsumentverkets rapporter om telefonförsäljning samt Råd &amp; Röns Skamlistan 2025.</p>
+  <p class="stats-source">Källa: Företagarnas rapport "Brott mot företagare 2025" samt Konsumentverkets rapporter om telefonförsäljning.</p>
+</div>
+
+<div class="context">
+  <div class="wrap">
+    <p>Vilseledande säljsamtal, stressade beslut och avtal du aldrig hade skrivit under om du fått läsa villkoren i lugn och ro. <strong>Det är ingen slump.</strong> När du driver företag har du sällan tid att granska varje erbjudande. Därför finns vi: för att ge dig tryggheten att fatta rätt beslut, innan ett "ja" blir ett dyrt misstag.</p>
+  </div>
 </div>
 
 <div class="band">
@@ -805,6 +816,41 @@
   });
 </script>
 
+<section class="policy" id="villkor">
+  <div class="wrap">
+    <span class="eyebrow">Tjänstevillkor</span>
+    <h2>Villkor för vår tjänst</h2>
+    <p>Dessa villkor gäller mellan Säkra Avtal (org.nr 559291-4781) och den företagskund som beställt tjänsten. De gäller från och med det datum kunden bekräftar sin beställning.</p>
+
+    <h3>1. Tjänsten</h3>
+    <p>Säkra Avtal erbjuder oberoende granskning av och rådgivning kring företagsavtal, i första hand abonnemang och löpande avtal som mobiltelefoni, bredband, företagsväxlar, TV och streaming, el, försäkringar samt internet- och IT-tjänster. I tjänsten ingår obegränsat antal avtalsgranskningar under tjänsteperioden, löpande rådgivning i avtalsfrågor samt en skriftlig bedömning och rekommendation per granskat avtal. Kunden kopplar in oss genom att ange vår adress (avtal@sakraavtal.se) till motparten, eller genom att lägga oss på kopia i mejlkonversationen.</p>
+
+    <h3>2. Vår roll och kundens ansvar</h3>
+    <p>Säkra Avtal är rådgivande. Vi granskar avtal och lämnar rekommendationer efter bästa förmåga, men alla beslut fattas av kunden själv. Kunden ansvarar för sina egna beslut att ingå, avstå från eller säga upp avtal. Vår rådgivning utgör inte juridisk rådgivning i lagens mening och ersätter inte konsultation med jurist eller advokat i frågor som kräver det. Vi granskar utifrån den information och de handlingar som görs tillgängliga för oss.</p>
+
+    <h3>3. Svarstid</h3>
+    <p>Vi lämnar normalt vår bedömning inom 24 timmar från det att vi mottagit ett avtal eller underlag. Vid hög belastning eller ofullständigt underlag kan svarstiden bli längre, och vi meddelar då kunden.</p>
+
+    <h3>4. Pris och betalning</h3>
+    <p>Tjänsten kostar 995 kr per år exklusive moms. Faktura skickas efter att kunden bekräftat sin beställning, med de betalningsvillkor som anges på fakturan. Vid utebliven betalning förbehåller vi oss rätten att pausa tjänsten till dess betalning skett.</p>
+
+    <h3>5. Tjänsteperiod, förnyelse och uppsägning</h3>
+    <p>Tjänsten löper i tolv (12) månader från och med bekräftelsedatum och förnyas därefter automatiskt med tolv (12) månader i taget. Kunden kan säga upp tjänsten med en (1) månads uppsägningstid före innevarande periods slut. Uppsägning görs skriftligen till hej@sakraavtal.se. Vi skickar alltid en påminnelse i god tid innan en förnyelse. Redan betald avgift för innevarande period återbetalas inte vid uppsägning, om inget annat skriftligen överenskommits.</p>
+
+    <h3>6. Ansvarsbegränsning</h3>
+    <p>Säkra Avtal ansvarar inte för beslut som kunden fattar eller avstår från att fatta med anledning av vår rådgivning, för ekonomisk skada eller följdskador som uppstår till följd av avtal kunden ingått eller sagt upp, eller för fel och brister i det underlag som tillhandahållits oss. Vårt sammanlagda ansvar gentemot kunden är under alla omständigheter begränsat till det belopp kunden betalat för tjänsten under innevarande tjänsteperiod.</p>
+
+    <h3>7. Personuppgifter</h3>
+    <p>Vi behandlar personuppgifter i enlighet med vår integritetspolicy nedan. Genom att beställa tjänsten godkänner kunden denna behandling.</p>
+
+    <h3>8. Ändring av villkor</h3>
+    <p>Vi kan komma att uppdatera dessa villkor. Väsentliga ändringar meddelas kunden i god tid och gäller tidigast från nästa förnyelse av tjänsten.</p>
+
+    <h3>9. Tvist</h3>
+    <p>Svensk lag tillämpas på avtalet. Tvist ska i första hand lösas genom överenskommelse mellan parterna. Om detta inte är möjligt avgörs tvisten av allmän domstol.</p>
+  </div>
+</section>
+
 <section class="policy" id="integritet">
   <div class="wrap">
     <span class="eyebrow">Integritetspolicy</span>
@@ -853,6 +899,7 @@
         <a href="#sa-funkar">Så fungerar det</a>
         <a href="#pris">Pris</a>
         <a href="#faq">Vanliga frågor</a>
+        <a href="#villkor">Tjänstevillkor</a>
         <a href="#integritet">Integritetspolicy</a>
       </div>
     </div>
