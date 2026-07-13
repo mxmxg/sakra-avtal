@@ -54,6 +54,8 @@
   header{border-bottom:1px solid var(--line);background:rgba(245,242,236,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:50}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1080px;margin:0 auto;gap:24px}
   .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:1.28rem;font-weight:600;color:var(--navy);flex-shrink:0}
+  .brand-text{display:flex;flex-direction:column;line-height:1.1}
+  .brand-slogan{font-family:'Fraunces',serif;font-style:italic;font-weight:400;font-size:.72rem;color:var(--stamp);letter-spacing:.01em;margin-top:2px}
   a.brand{cursor:pointer}
   a.brand:hover{opacity:.85}
   .brand .seal{
@@ -423,7 +425,7 @@
 
 <header id="top">
   <div class="nav">
-    <a href="#" class="brand" id="logoHome" style="text-decoration:none"><span class="seal">SA</span> Säkra Avtal</a>
+    <a href="#" class="brand" id="logoHome" style="text-decoration:none"><span class="seal">SA</span><span class="brand-text">Säkra Avtal<span class="brand-slogan">Lurad en gång, aldrig mer</span></span></a>
     <nav class="nav-links" id="navLinks">
       <a href="#sa-funkar">Så funkar det</a>
       <a href="#omdomen">Omdömen</a>
