@@ -214,11 +214,25 @@
     transition:border-color .15s;
   }
   .field input:focus,.field textarea:focus{outline:none;border-color:var(--stamp);background:#fff}
+  /* grön bekräftelse när fältet är korrekt ifyllt */
+  .field input:valid:not(:placeholder-shown){
+    border-color:var(--stamp);
+    background:#EDF6F0;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%232F6B4F' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+    padding-right:40px;
+  }
+  .field textarea:valid:not(:placeholder-shown){border-color:var(--stamp);background:#EDF6F0}
   .field textarea{resize:vertical;min-height:90px}
   .field .opt{text-transform:none;letter-spacing:0;color:#9aa6b0;font-size:.68rem}
   .consent{display:flex;gap:10px;align-items:flex-start;margin:8px 0 22px;font-size:.92rem;color:var(--muted)}
   .consent input{margin-top:4px;flex-shrink:0;width:16px;height:16px;accent-color:var(--stamp)}
-  .form-card .btn-primary{width:100%;text-align:center;border:none;cursor:pointer;font-size:.95rem}
+  .form-card .btn-primary{width:100%;text-align:center;border:none;cursor:pointer;font-size:.95rem;transition:background .2s,opacity .2s}
+  /* inaktivt läge tills formuläret är komplett */
+  .form-card .btn-primary.locked{background:var(--line);color:#8a9299;cursor:not-allowed}
+  .form-card .btn-primary.ready{background:var(--stamp);color:#fff}
+  .form-card .btn-primary.ready:hover{background:var(--stamp-ink)}
   .form-note{font-size:.8rem;color:#9aa6b0;text-align:center;margin-top:14px}
   .form-success{
     display:none;text-align:center;padding:30px 20px;
@@ -434,7 +448,7 @@
     <p>Du ska aldrig behöva fundera över om du missat viktiga villkor eller bundit upp dig till något du inte avsåg att köpa. Vi ser till att du vet exakt vad du tackar ja till — innan avtalet blir bindande.</p>
 
     <div class="form-card">
-      <form id="kontaktForm" action="https://formspree.io/f/DIN_FORMSPREE_KOD" method="POST">
+      <form id="kontaktForm" action="https://formspree.io/f/xwvgkbza" method="POST">
         <div id="formInner">
           <h3>Bli kund eller bli kontaktad</h3>
           <p class="sub">Fyll i dina uppgifter så hör vi av oss. Inga förpliktelser.</p>
@@ -442,11 +456,11 @@
           <div class="field-row">
             <div class="field">
               <label for="namn">Namn</label>
-              <input type="text" id="namn" name="namn" required>
+              <input type="text" id="namn" name="namn" placeholder="Ditt namn" required>
             </div>
             <div class="field">
               <label for="foretag">Företag</label>
-              <input type="text" id="foretag" name="foretag" required>
+              <input type="text" id="foretag" name="foretag" placeholder="Företagets namn" required>
             </div>
           </div>
 
@@ -457,13 +471,13 @@
             </div>
             <div class="field">
               <label for="telefon">Telefon</label>
-              <input type="tel" id="telefon" name="telefon" required>
+              <input type="tel" id="telefon" name="telefon" placeholder="07X XXX XX XX" required>
             </div>
           </div>
 
           <div class="field">
             <label for="epost">E-post</label>
-            <input type="email" id="epost" name="epost" required>
+            <input type="email" id="epost" name="epost" placeholder="namn@företag.se" required>
           </div>
 
           <div class="field">
@@ -476,7 +490,7 @@
             <span>Ja, jag vill bli kontaktad av Säkra Avtal om att bli kund.</span>
           </label>
 
-          <button type="submit" class="btn btn-primary">Skicka in</button>
+          <button type="submit" class="btn btn-primary locked">Skicka in</button>
           <p class="form-note">Vi använder dina uppgifter endast för att kontakta dig. Inga uppgifter delas vidare.</p>
         </div>
       </form>
@@ -492,6 +506,17 @@
 
 <script>
   const form = document.getElementById('kontaktForm');
+  const submitBtn = form.querySelector('button[type="submit"]');
+
+  // gör knappen grön när alla obligatoriska fält är korrekt ifyllda
+  function updateButtonState(){
+    const ok = form.checkValidity();
+    submitBtn.classList.toggle('ready', ok);
+    submitBtn.classList.toggle('locked', !ok);
+  }
+  form.addEventListener('input', updateButtonState);
+  updateButtonState();
+
   form.addEventListener('submit', async function(e){
     e.preventDefault();
     const btn = form.querySelector('button[type="submit"]');
