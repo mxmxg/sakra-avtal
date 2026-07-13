@@ -54,6 +54,8 @@
   header{border-bottom:1px solid var(--line);background:rgba(245,242,236,.92);backdrop-filter:blur(8px);position:sticky;top:0;z-index:50}
   .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1080px;margin:0 auto;gap:24px}
   .brand{display:flex;align-items:center;gap:12px;font-family:'Fraunces',serif;font-size:1.28rem;font-weight:600;color:var(--navy);flex-shrink:0}
+  a.brand{cursor:pointer}
+  a.brand:hover{opacity:.85}
   .brand .seal{
     width:36px;height:36px;border:1.5px solid var(--stamp);border-radius:50%;
     display:grid;place-items:center;color:var(--stamp);font-family:'Fraunces',serif;
@@ -403,9 +405,9 @@
   </div>
 </div>
 
-<header>
+<header id="top">
   <div class="nav">
-    <div class="brand"><span class="seal">SA</span> Säkra Avtal</div>
+    <a href="#top" class="brand" style="text-decoration:none"><span class="seal">SA</span> Säkra Avtal</a>
     <nav class="nav-links" id="navLinks">
       <a href="#sa-funkar">Så funkar det</a>
       <a href="#omdomen">Omdömen</a>
