@@ -68,6 +68,7 @@
     padding:4px 0;border-bottom:2px solid transparent;transition:border-color .2s,color .2s;white-space:nowrap;
   }
   .nav-links a:hover{color:var(--navy);border-bottom-color:var(--stamp)}
+  .mobile-only-cta{display:none}
   .nav-cta{
     font-family:'IBM Plex Mono',monospace;font-size:.82rem;letter-spacing:.04em;
     background:var(--navy);color:var(--white);padding:11px 20px;border-radius:var(--radius);
@@ -88,6 +89,7 @@
       box-shadow:0 12px 24px rgba(14,34,51,.08);
     }
     .nav-links.open{display:flex}
+    .nav-links.open .mobile-only-cta{display:block}
     .nav-links a{padding:14px 0;border-bottom:1px solid var(--line);font-size:1rem}
     .nav-links a:last-child{border-bottom:none}
     .nav-toggle{display:block}
@@ -413,7 +415,7 @@
       <a href="#omdomen">Omdömen</a>
       <a href="#pris">Pris</a>
       <a href="#faq">Vanliga frågor</a>
-      <a href="#kontakt">Få hjälp idag</a>
+      <a href="#kontakt" class="mobile-only-cta">Få hjälp idag</a>
     </nav>
     <a href="#kontakt" class="nav-cta">Få hjälp idag</a>
     <button class="nav-toggle" id="navToggle" aria-label="Öppna meny">
