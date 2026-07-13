@@ -356,6 +356,25 @@
   footer .legal .mono{font-family:'IBM Plex Mono',monospace;color:#8CA6B8}
   @media(max-width:760px){footer .cols{grid-template-columns:1fr;gap:28px}}
 
+  /* ---- juridiska sektioner (utfällbara) ---- */
+  .legal-section{background:var(--white);border-top:1px solid var(--line)}
+  .legal-section .wrap{padding:0;max-width:820px}
+  .legal-details{border:none}
+  .legal-details summary{
+    cursor:pointer;list-style:none;padding:32px 24px;display:flex;justify-content:space-between;align-items:center;gap:16px;
+  }
+  .legal-details summary::-webkit-details-marker{display:none}
+  .legal-details summary h2{font-size:clamp(1.4rem,2.6vw,1.9rem);color:var(--navy);margin:0}
+  .legal-details summary .eyebrow{display:block;margin-bottom:6px;color:var(--muted)}
+  .legal-details summary::after{content:"+";font-family:'IBM Plex Mono',monospace;color:var(--stamp);font-size:1.8rem;flex-shrink:0}
+  .legal-details[open] summary::after{content:"–"}
+  .legal-body{padding:0 24px 40px}
+  .legal-body h3{font-family:'Inter',sans-serif;font-weight:600;font-size:1.05rem;color:var(--navy);margin:22px 0 8px}
+  .legal-body p{color:var(--muted);font-size:.98rem;line-height:1.7;margin-bottom:10px}
+  .legal-body ul{color:var(--muted);font-size:.98rem;line-height:1.7;margin:0 0 10px;padding-left:20px}
+  .legal-body li{margin-bottom:5px}
+  .legal-body p a{color:var(--stamp)}
+
   /* ---- integritetspolicy ---- */
   .policy{background:var(--white);border-top:1px solid var(--line)}
   .policy .wrap{padding:72px 24px;max-width:820px}
@@ -816,10 +835,11 @@
   });
 </script>
 
-<section class="policy" id="villkor">
+<section class="legal-section" id="villkor">
   <div class="wrap">
-    <span class="eyebrow">Tjänstevillkor</span>
-    <h2>Villkor för vår tjänst</h2>
+    <details class="legal-details">
+      <summary><span><span class="eyebrow">Tjänstevillkor</span><h2>Villkor för vår tjänst</h2></span></summary>
+      <div class="legal-body">
     <p>Dessa villkor gäller mellan Säkra Avtal (org.nr 559291-4781) och den företagskund som beställt tjänsten. De gäller från och med det datum kunden bekräftar sin beställning.</p>
 
     <h3>1. Tjänsten</h3>
@@ -848,13 +868,16 @@
 
     <h3>9. Tvist</h3>
     <p>Svensk lag tillämpas på avtalet. Tvist ska i första hand lösas genom överenskommelse mellan parterna. Om detta inte är möjligt avgörs tvisten av allmän domstol.</p>
+      </div>
+    </details>
   </div>
 </section>
 
-<section class="policy" id="integritet">
+<section class="legal-section" id="integritet">
   <div class="wrap">
-    <span class="eyebrow">Integritetspolicy</span>
-    <h2>Så hanterar vi dina uppgifter</h2>
+    <details class="legal-details">
+      <summary><span><span class="eyebrow">Integritetspolicy</span><h2>Så hanterar vi dina uppgifter</h2></span></summary>
+      <div class="legal-body">
     <p>Din integritet är viktig för oss. Här förklarar vi vilka personuppgifter vi samlar in, varför, och vilka rättigheter du har enligt dataskyddsförordningen (GDPR).</p>
 
     <h3>Vem ansvarar för dina uppgifter?</h3>
@@ -878,6 +901,8 @@
 
     <h3>Dina rättigheter</h3>
     <p>Du har rätt att begära ut, rätta eller radera de uppgifter vi har om dig, samt att återkalla ditt samtycke. Kontakta oss på hej@sakraavtal.se så hjälper vi dig. Du har också rätt att lämna klagomål till Integritetsskyddsmyndigheten (IMY).</p>
+      </div>
+    </details>
   </div>
 </section>
 
