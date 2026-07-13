@@ -423,7 +423,7 @@
 
 <header id="top">
   <div class="nav">
-    <a href="#top" class="brand" style="text-decoration:none"><span class="seal">SA</span> Säkra Avtal</a>
+    <a href="#" class="brand" id="logoHome" style="text-decoration:none"><span class="seal">SA</span> Säkra Avtal</a>
     <nav class="nav-links" id="navLinks">
       <a href="#sa-funkar">Så funkar det</a>
       <a href="#omdomen">Omdömen</a>
@@ -812,6 +812,12 @@
     let auto = setInterval(()=>goTo(current+1), 6000);
     function resetAuto(){clearInterval(auto);auto=setInterval(()=>goTo(current+1),6000);}
   })();
+
+  // logga som hemknapp - scrolla mjukt till toppen
+  document.getElementById('logoHome').addEventListener('click', function(e){
+    e.preventDefault();
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
 
   // mobilmeny (hamburger)
   const navToggle = document.getElementById('navToggle');
